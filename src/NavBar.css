@@ -1,0 +1,50 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+}
+
+.navbar-item {
+  font-weight: 800;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px; /* increase width to show full text */
+  height: 100%;
+  color: black;
+  font-size: 14px; /* decrease font size to fit text */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-item:hover {
+  color: coral;
+}
+
+.navbar-item.active {
+  transform: skewX(10deg) scaleX(1.2);
+  z-index: 1;
+
+}
+
+.navbar-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* background color to match navbar */
+  transform: skewX(-30deg);
+  z-index: -1; /* z-index to ensure menu item text appears on top */
+}
+
+.navbar-item.active::before {
+  background-color: #fff; /* change background color for active menu item */
+  transform: skewX(-30deg) scaleX(1.2);
+  border: 4px solid #007acc;
+}
